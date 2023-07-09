@@ -1,6 +1,7 @@
 package com.forum.forumdemo.controller
 
 import com.forum.forumdemo.`object`.ChatRequest
+import com.forum.forumdemo.request.LoginInfo
 import com.forum.forumdemo.response.WeatherResponse
 import com.forum.forumdemo.service.ChatService
 import com.forum.forumdemo.service.WeatherService
@@ -31,4 +32,8 @@ class HomePageController(
     ): String {
         return chatService.sendMsg(chatRequest)
     }
+
+    @PostMapping("/login")
+    fun login(@RequestBody loginInfo: LoginInfo) =
+        println("==============================================${loginInfo.username} login!!")
 }
